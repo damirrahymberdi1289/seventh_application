@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:seventh_application/components/bottom_nav_bar.dart';
-import 'package:seventh_application/const.dart';
 import 'package:seventh_application/pages/cart_page.dart';
 
 import 'shop_page.dart';
@@ -25,7 +24,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),

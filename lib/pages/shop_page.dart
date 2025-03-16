@@ -18,7 +18,10 @@ class _ShopPageState extends State<ShopPage> {
     showDialog(
       context: context,
       builder:
-          (context) => AlertDialog(title: Text("Successfully added to cart")),
+          (context) => const AlertDialog(
+            title: Text("Successfully added to cart"),
+            backgroundColor: Colors.white,
+          ),
     );
   }
 
@@ -28,16 +31,17 @@ class _ShopPageState extends State<ShopPage> {
       builder:
           (context, value, child) => SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
                   const Text(
-                    "How would like your coffee?",
-                    style: TextStyle(fontSize: 20),
+                    "How would you like your doner?",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
                   ),
-
-                  const SizedBox(height: 25),
-
+                  const SizedBox(height: 20),
                   Expanded(
                     child: ListView.builder(
                       itemCount: value.coffeeShop.length,
@@ -46,7 +50,7 @@ class _ShopPageState extends State<ShopPage> {
 
                         return CoffeeTile(
                           coffee: eachCoffee,
-                          icon: Icon(Icons.add),
+                          icon: const Icon(Icons.add),
                           onPressed: () => addToCart(eachCoffee),
                         );
                       },
